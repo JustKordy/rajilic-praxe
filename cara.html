@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="numberToWrite">Jak dlouhou čáru chceš?</label>
+    <input type="number" name="" id="numberToWrite">
+    <p id="draw"></p>
+</body>
+<script>
+    const number = document.getElementById('numberToWrite');
+    const draw = document.getElementById('draw');
+    number.addEventListener("input", function(){
+        draw.innerHTML = "";
+        for (let index = 0; index < number.value; index++) {
+            
+            draw.innerHTML += "."
+        }
+    })
+
+</script>
+</html>
