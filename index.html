@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <label for="numberToWrite">Jak dlouhou čáru chceš?</label>
-    <input type="number" name="" id="numberToWrite">
-    <p id="draw"></p>
+    <div class="container">
+        <h1>Dvojkova souststava</h1>
+        <label for="decimalInput">Zadej číslo:</label>
+        <input type="number" id="decimalInput">
+        <button onclick="convertToBinary()">Převést</button>
+        <div id="binaryOutput"></div>
+    </div>
 </body>
 <script>
-    const number = document.getElementById('numberToWrite');
-    const draw = document.getElementById('draw');
-    number.addEventListener("input", function(){
-        draw.innerHTML = "";
-        for (let index = 0; index < number.value; index++) {
-            
-            draw.innerHTML += "."
-        }
-    })
+
+    function convertToBinary() {
+    const decimalInput = document.getElementById('decimalInput');
+    const binaryOutput = document.getElementById('binaryOutput');
+
+    const decimalNumber = parseInt(decimalInput.value);
+
+    const binaryNumber = decimalNumber.toString(2);
+
+    binaryOutput.textContent = binaryNumber;
+}
+
+
 
 </script>
 </html>
